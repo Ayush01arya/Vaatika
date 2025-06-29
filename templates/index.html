@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VATIKA - वाराणसी पर्यटन चैटबॉट</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🕉️ VATIKA</h1>
+            <p>वाराणसी पर्यटन सहायक चैटबॉट</p>
+        </header>
+
+        <div class="chat-container">
+            <div id="chatMessages" class="chat-messages">
+                <div class="message bot-message">
+                    <div class="message-content">
+                        नमस्कार! मैं VATIKA हूं, वाराणसी का पर्यटन सहायक। मैं आपको वाराणसी के घाटों, मंदिरों, आश्रमों, भोजन, और अन्य पर्यटन स्थलों की जानकारी दे सकता हूं। आप हिंदी में प्रश्न पूछ सकते हैं।
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-input-container">
+                <input type="text" id="messageInput" placeholder="अपना प्रश्न यहां लिखें..." autocomplete="off">
+                <button id="sendButton">भेजें</button>
+            </div>
+        </div>
+
+        <div class="suggestions">
+            <h3>सुझाए गए प्रश्न:</h3>
+            <div class="suggestion-buttons">
+                <button class="suggestion-btn" onclick="sendSuggestion('गंगा आरती का समय क्या है?')">गंगा आरती का समय</button>
+                <button class="suggestion-btn" onclick="sendSuggestion('काशी विश्वनाथ मंदिर कैसे जाएं?')">काशी विश्वनाथ मंदिर</button>
+                <button class="suggestion-btn" onclick="sendSuggestion('दशाश्वमेध घाट की जानकारी')">दशाश्वमेध घाट</button>
+                <button class="suggestion-btn" onclick="sendSuggestion('वाराणसी का प्रसिद्ध भोजन')">प्रसिद्ध भोजन</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="loadingIndicator" class="loading-indicator" style="display: none;">
+        <div class="spinner"></div>
+        <span>उत्तर तैयार कर रहे हैं...</span>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
